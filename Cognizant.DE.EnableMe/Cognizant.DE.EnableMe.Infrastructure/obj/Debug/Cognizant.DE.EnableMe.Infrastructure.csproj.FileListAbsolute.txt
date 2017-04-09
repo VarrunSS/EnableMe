@@ -1,0 +1,5 @@
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Infrastructure\bin\Debug\Cognizant.DE.EnableMe.Infrastructure.dll
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Infrastructure\bin\Debug\Cognizant.DE.EnableMe.Infrastructure.pdb
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Infrastructure\obj\Debug\Cognizant.DE.EnableMe.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Infrastructure\obj\Debug\Cognizant.DE.EnableMe.Infrastructure.dll
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Infrastructure\obj\Debug\Cognizant.DE.EnableMe.Infrastructure.pdb

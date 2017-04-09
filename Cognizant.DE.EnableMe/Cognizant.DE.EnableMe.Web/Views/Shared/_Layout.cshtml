@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0">
+    <title>2Do</title>
+    <link rel="stylesheet" type="text/css" href="includes/styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="includes/angular_components/ngSelectSearch/css/nya-bs-select.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="includes/styles/daterangepicker.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="includes/styles/fullcalendar.min.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/fullcalendar.print.min.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="includes/styles/ng-table.min.css">
+    <link rel="stylesheet" type="text/css" href="includes/styles/angucomplete-alt.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/angular-material.min.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/jquery.bxslider.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/animate.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/ng-tags-input.min.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/custombox.min.css" />
+    <link rel="stylesheet" type="text/css" href="includes/styles/main.css" />
+</head>
+<body ng-app="ToDoApp">
+    <div class="wrapper" ng-class="class" ng-controller="rootCtrl">
+        <!-- Header Section - Start -->
+        <div ng-include="'includes/views/header.html'"></div>
+        <!-- Header Section End -->
+        <!-- Left Section - Start -->
+        <div ng-include="'includes/views/leftView.html'"></div>
+        <!-- Left Section - End -->
+        @RenderBody()
+    </div>
+    <script type="text/javascript">
+        var APP = {};
+        APP.app = {};
+        APP.basePath='@Url.Content("~/")';
+    </script>
+    <script type="text/javascript" src="includes/js/jQuery.js"></script>
+    <script type="text/javascript" src="includes/js/angular.min.js"></script>
+    <script type="text/javascript" src="includes/js/angular-route.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.viewport.min.js"></script>
+    <script type="text/javascript" src="includes/js/ng-table.min.js"></script>
+    <script type="text/javascript" src="includes/js/moment.min.js"></script>
+    <script type="text/javascript" src="includes/js/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="includes/js/calendar.js"></script>
+    <!-- <script type="text/javascript" src="includes/js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="includes/js/angular-daterangepicker.js"></script> -->
+
+    <script type="text/javascript" src="includes/angular_components/ngSelectSearch/js/libs/nya-bs-public.js"></script>
+    <script type="text/javascript" src="includes/angular_components/ngSelectSearch/js/libs/nya-bs-config.js"></script>
+    <script type="text/javascript" src="includes/angular_components/ngSelectSearch/js/libs/nya-bs-select-ctrl.js"></script>
+    <script type="text/javascript" src="includes/angular_components/ngSelectSearch/js/libs/nya-bs-select.js"></script>
+    <script type="text/javascript" src="includes/angular_components/ngSelectSearch/js/libs/nya-bs-option.js"></script>
+    <script type="text/javascript" src="includes/js/angular-touch.min.js"></script>
+    <script type="text/javascript" src="includes/js/angucomplete-alt.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="includes/js/scrollbars.js"></script>
+    <script type="text/javascript" src="includes/js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="includes/js/angular-aria.min.js"></script>
+    <script type="text/javascript" src="includes/js/angular-messages.min.js"></script>
+    <script type="text/javascript" src="includes/js/svg-assets-cache.js"></script>
+    <script type="text/javascript" src="includes/js/angular-material.min.js"></script>
+    <script type="text/javascript" src="includes/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="includes/js/ui-bootstrap-tpls-2.4.0.min.js"></script>
+    <script type="text/javascript" src="includes/js/datetimepicker.js"></script>
+    <script type="text/javascript" src="includes/js/datetimepicker.templates.js"></script>
+    <script type="text/javascript" src="includes/js/tabs.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.plugin.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.timeentry.js"></script>
+    <script type="text/javascript" src="includes/js/ng-tags-input.min.js"></script>
+    <script type="text/javascript" src="includes/js/custombox.min.js"></script>
+    @*<script type="text/javascript" src="includes/js/app/app.js"></script>*@
+    <script type="text/javascript" src="includes/js/script.js"></script>
+    @Scripts.Render("~/bundles/js/app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,12 @@
+.angucomplete-holder {position: relative;}
+.angucomplete-dropdown {border-color: #ececec;border-width: 1px;border-style: solid;width: 100%;cursor: pointer;z-index: 9999;
+position: absolute;top:27px;/*left: 0px;*/background-color: #ffffff;/*overflow-y: auto;max-height: 150px;*/}
+.angucomplete-searching {color: #000;font-size: 14px;}
+.angucomplete-description {font-size: 14px;}
+.angucomplete-row {padding: 5px;color: #000000;clear: both;}
+.angucomplete-selected-row {background-color: #f5f5f5;color: #000;}
+.angucomplete-image-holder {padding-top: 2px;float: left;margin-right: 10px;margin-left: 5px;}
+.angucomplete-image {height: 34px;width: 34px;border-radius: 50%;border-color: #ececec;border-style: solid;border-width: 1px;}
+.angucomplete-image-default {background-position: center;background-size: contain;height: 34px;width: 34px;}
+.highlight { font-weight:bold;}
+#checklistInpbox_dropdown,#serviceLineInpbox_dropdown,#verticalInpbox_dropdown,#practicesInpbox_dropdown,#accountsInpbox_dropdown,#practicesInpbox_dropdown {overflow-y: auto; max-height: 150px;}

@@ -1,0 +1,87 @@
+/**
+ * @lordfriend/nya-bootstrap-select v2.1.8
+ * Copyright 2014 Nyasoft
+ * Licensed under MIT license
+ */
+.nya-bs-select {/*width: 220px\9; IE8 and below*/width: 220px \0;/*IE9 and below*/padding: 0;margin: 0;}
+.nya-bs-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {width: 100%;}
+.nya-bs-select.form-control {margin-bottom: 0;padding: 0;border: none;}
+.nya-bs-select.form-control:not([class*="col-"]) {width: 100%;}
+.nya-bs-select .dropdown-toggle {width: 100%;padding-right: 25px;}
+.nya-bs-select .dropdown-toggle .filter-option,.nya-bs-select .dropdown-toggle .special-title {overflow: hidden;width: 100%;text-align: left;}
+.nya-bs-select .dropdown-toggle .filter-option {display: inline-block;}
+.nya-bs-select .dropdown-toggle .special-title { display: none;}
+.nya-bs-select .dropdown-toggle.show-special-title .filter-option {display: none;}
+.nya-bs-select .dropdown-toggle.show-special-title .special-title {display: inline-block;}
+.nya-bs-select .dropdown-toggle .caret {position: absolute;top: 50%;right: 12px;margin-top: -2px;vertical-align: middle;}
+.nya-bs-select.fit-width {width: auto !important;}
+.nya-bs-select.btn-group:not(.input-group-btn),.nya-bs-select.btn-group[class*="col-"] {float: none;display: inline-block;margin-left: 0;}
+.nya-bs-select.btn-group.dropdown-menu-right,.nya-bs-select.btn-group[class*="col-"].dropdown-menu-right,.row-fluid .nya-bs-select.btn-group[class*="col-"].dropdown-menu-right { float: right;}
+.nya-bs-select.btn-group[class*="col-"] .btn { width: 100%;}
+.nya-bs-select.btn-group .dropdown-menu {min-width: 100%;z-index: 1035;box-sizing: border-box;}
+.nya-bs-select.btn-group .dropdown-menu.inner {position: static;border: 0;padding: 0;margin: 0;border-radius: 0;box-shadow: none;}
+.nya-bs-select.btn-group .dropdown-menu li {position: relative;text-align: left;}
+.nya-bs-select.btn-group .dropdown-menu li.disabled a {cursor: not-allowed;}
+.nya-bs-select.btn-group .dropdown-menu li.not-match {display: none;}
+.nya-bs-select.btn-group .dropdown-menu li.no-search-result {display: none;padding: 3px;background: #f5f5f5;margin: 0 5px;}
+.nya-bs-select.btn-group .dropdown-menu li.no-search-result.show {display: list-item;}
+.nya-bs-select.btn-group .dropdown-menu li.group-item a {padding-left: 2.25em;}
+.nya-bs-select.btn-group .dropdown-menu li a {cursor: pointer;}
+.nya-bs-select.btn-group .dropdown-menu li a span.check-mark {display: none;}
+.nya-bs-select.btn-group .dropdown-menu li a span.text {display: inline-block;}
+.nya-bs-select.btn-group .dropdown-menu li small {padding-left: 0.5em;}
+.nya-bs-select.btn-group .dropdown-menu li.selected a .check-mark {position: absolute;display: inline-block;right: 15px;margin-top: 5px;}
+.nya-bs-select.btn-group .dropdown-menu li a span.text {margin-right: 34px;}
+.nya-bs-select.btn-group .dropdown-menu li .dropdown-header {display: none;}
+.nya-bs-select.btn-group .dropdown-menu li.first-in-group {margin-top: 1.75em;}
+.nya-bs-select.btn-group .dropdown-menu li.first-in-group .dropdown-header {display: block; position: absolute;top: -1.75em; left: 0;}
+.nya-bs-select.show-menu-arrow.open > .btn {z-index: 1036;}
+.nya-bs-select.show-menu-arrow .dropdown-toggle:before { content: " ";border-left: 7px solid transparent;border-right: 7px solid transparent;  border-bottom-width: 7px;border-bottom-style: solid;border-bottom-color: rgba(204, 204, 204, 0.2); position: absolute;bottom: -4px;left: 9px;display: none;}
+.nya-bs-select.show-menu-arrow .dropdown-toggle:after { content: '';border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid white;position: absolute;bottom: -4px;left: 10px;display: none;}
+.nya-bs-select.show-menu-arrow.dropup .dropdown-toggle:before {bottom: auto;top: -3px;border-bottom: 0;border-top-width: 7px;border-top-style: solid;  border-top-color: rgba(204, 204, 204, 0.2);}
+.nya-bs-select.show-menu-arrow.dropup .dropdown-toggle:after {bottom: auto;top: -3px;border-top: 6px solid white;border-bottom: 0;}
+.nya-bs-select.show-menu-arrow.pull-right .dropdown-toggle:before {right: 12px;left: auto;}
+.nya-bs-select.show-menu-arrow.pull-right .dropdown-toggle:after {right: 13px;left: auto;}
+.nya-bs-select.show-menu-arrow.open > .dropdown-toggle:before,.nya-bs-select.show-menu-arrow.open > .dropdown-toggle:after {display: block;}
+.nya-bs-select .bs-searchbox,.nya-bs-select .bs-actionsbox {padding: 4px 8px;}
+.nya-bs-select .bs-actionsbox {float: left;width: 100%;box-sizing: border-box;}
+.nya-bs-select .bs-actionsbox .btn-group button {width: 50%;}
+.nya-bs-select .bs-searchbox + .bs-actionsbox {padding: 0 8px 4px;}
+.nya-bs-select .bs-searchbox input.form-control{margin-bottom: 0;width: 100%;float: none;z-index: inherit;display: block;position: static;border-radius: 4px;}
+.nya-bs-select.fit-width .btn .filter-option,.nya-bs-select.fit-width .btn .special-title {position: static;}
+.nya-bs-select.fit-width .btn .caret {position: static;top: auto;margin-top: -1px;}
+.nya-bs-select.on-modal .dropdown-menu {z-index: 1040;}
+.nya-bs-select.on-modal.open > .btn {z-index: 1041;}
+
+/*** Customization - Assessment - Start ***/
+/*** Left Menu Select - Start ***/
+.nya-bs-select li a{word-break: break-all;width: 100%;white-space: normal;}
+.nya-bs-select.btn-group .dropdown-menu{max-height: 200px;}
+.nya-bs-select.btn-group .dropdown-menu.inner{overflow-y:auto;}
+.selectWrap .nya-bs-select.btn-group .dropdown-menu {border: none;width: 100%;}
+.selectWrap .nya-bs-select .dropdown-toggle .filter-option,.selectWrap .nya-bs-select .dropdown-toggle .special-title {overflow: hidden;width: 95%;text-align: left;word-wrap: break-word;white-space: normal;}
+.selectWrap .dropdown-menu > li > a {background: #0f0f0f;color: #777;}
+.selectWrap .dropdown-menu > li.selected > a,.selectWrap .dropdown-menu > li > a:hover {color: #fff;}
+.selectWrap .nya-bs-select .dropdown-toggle .caret {background: url(../images/SpriteCPR_final.png) no-repeat -352px -58px;width: 15px;height: 15px;display: inline-block;float: right;margin:0; cursor: pointer;border: none;top: 22%;right: 10px;}
+.selectWrap .nya-bs-select.open .dropdown-toggle .caret {background: url(../images/SpriteCPR_final.png) no-repeat -10px -58px;}
+/*** Left Menu Select - End ***/
+/*** Checklist Select - Start ***/
+.selectWrapper{width:20%;}
+.selectWrapper .nya-bs-select.btn-group .dropdown-menu {z-index: 9;}
+.selectWrapper .btn-default{border: 1px solid #e3e3e3;height: 28px;padding: 2px 5px 2px 5px;}
+.selectWrapper .btn-default:hover,.selectWrapper .btn-default:focus,.selectWrapper .btn-default:active,.selectWrapper .btn-default.active{background:#fff;}
+/*.selectWrapper .btn-default:hover,.selectWrapper .btn-default:focus,.selectWrapper .btn-default:active,.selectWrapper .btn-default.active{border-color: #66afe9;outline: 0;}*/ 
+.selectWrapper .open .dropdown-toggle.btn-default:hover {background-color: #ebebeb;}
+.selectWrapper .nya-bs-select .dropdown-toggle .caret {background: url(../images/SpriteCPR_final.png) -51px -54px no-repeat #F3F3F3;border: none;float: left;
+height: 6px;margin-top: 0;padding: 13px;position: absolute;right: 0;top: 0;vertical-align: middle;width: 10px;}
+/*** Checklist Select - End ***/
+/*** Multiple Select - Checkbox Addition - Start ***/
+.selectWrapper .nya-bs-select[multiple].btn-group .dropdown-menu.inner{padding-top: 5px;padding-bottom: 5px;}
+.selectWrapper .nya-bs-select[multiple] li{/*padding-left: 4px;*/}
+.selectWrapper .nya-bs-select[multiple] .dropdown-menu>li>a:focus {background-color: #fff;}
+.selectWrapper .nya-bs-select[multiple] li a{ position:relative;padding: 5px 10px 5px 33px;}
+.selectWrapper .nya-bs-select[multiple] li a:before{background: url(../images/SpriteCPR_final.png) -95px -117px no-repeat;width: 15px; position:absolute;content: " ";height: 15px;display: inline-block;position: absolute;left: 10px;margin-top: 2px;}
+.selectWrapper .nya-bs-select[multiple] li.selected a:before{background: url(../images/SpriteCPR_final.png) -70px -117px no-repeat;}
+
+/*** Multiple Select - Checkbox Addition - End **/
+/*** Customization - Assessment - End ***/

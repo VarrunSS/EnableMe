@@ -1,0 +1,9 @@
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\bin\Debug\Cognizant.DE.EnableMe.Services.dll
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\bin\Debug\Cognizant.DE.EnableMe.Services.pdb
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\bin\Debug\Cognizant.DE.EnableMe.DAL.dll
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\bin\Debug\Cognizant.DE.EnableMe.Entities.dll
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\bin\Debug\Cognizant.DE.EnableMe.DAL.pdb
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\bin\Debug\Cognizant.DE.EnableMe.Entities.pdb
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\obj\Debug\Cognizant.DE.EnableMe.Services.csprojResolveAssemblyReference.cache
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\obj\Debug\Cognizant.DE.EnableMe.Services.dll
+C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Services\obj\Debug\Cognizant.DE.EnableMe.Services.pdb

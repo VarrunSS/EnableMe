@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7D96ECC7-01DE-4D5B-A7C4-35230D1129C3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cognizant.DE.EnableMe.Web</RootNamespace>
+    <AssemblyName>Cognizant.DE.EnableMe.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\UserController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="includes\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="includes\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="includes\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="includes\fonts\SourceSansPro-Light.eot" />
+    <Content Include="includes\fonts\SourceSansPro-Light.ttf" />
+    <Content Include="includes\fonts\SourceSansPro-Light.woff" />
+    <Content Include="includes\fonts\SourceSansPro-LightIt.eot" />
+    <Content Include="includes\fonts\SourceSansPro-LightItalic.ttf" />
+    <Content Include="includes\fonts\SourceSansPro-Regular.eot" />
+    <Content Include="includes\fonts\SourceSansPro-Regular.ttf" />
+    <Content Include="includes\fonts\SourceSansPro-Regular.woff" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="includes\angular_components\angucomplete\index.html" />
+    <Content Include="includes\angular_components\ngSelectSearch\css\nya-bs-select.css" />
+    <Content Include="includes\angular_components\ngSelectSearch\images\SpriteCPR_final.png" />
+    <Content Include="includes\angular_components\ngSelectSearch\js\libs\nya-bs-config.js" />
+    <Content Include="includes\angular_components\ngSelectSearch\js\libs\nya-bs-option.js" />
+    <Content Include="includes\angular_components\ngSelectSearch\js\libs\nya-bs-public.js" />
+    <Content Include="includes\angular_components\ngSelectSearch\js\libs\nya-bs-select-ctrl.js" />
+    <Content Include="includes\angular_components\ngSelectSearch\js\libs\nya-bs-select.js" />
+    <Content Include="includes\angular_components\ngSelectSearch\select.html" />
+    <Content Include="includes\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="includes\images\ajax-loader.gif" />
+    <Content Include="includes\images\Arrow.png" />
+    <Content Include="includes\images\arrow_01.png" />
+    <Content Include="includes\images\arrow_02.png" />
+    <Content Include="includes\images\Assessment_sprit.png" />
+    <Content Include="includes\images\auditorLoadGraph.png" />
+    <Content Include="includes\images\Audit_plan-sprit.png" />
+    <Content Include="includes\images\back.png" />
+    <Content Include="includes\images\Baseline_view.png" />
+    <Content Include="includes\images\blue-end.jpg" />
+    <Content Include="includes\images\blue-end.png" />
+    <Content Include="includes\images\blue-green.jpg" />
+    <Content Include="includes\images\blue-green.png" />
+    <Content Include="includes\images\blue-grey.jpg" />
+    <Content Include="includes\images\blue-grey.png" />
+    <Content Include="includes\images\blue.png" />
+    <Content Include="includes\images\breadcrum1.jpg" />
+    <Content Include="includes\images\breadcrum2.JPG" />
+    <Content Include="includes\images\breadcrum3.JPG" />
+    <Content Include="includes\images\Close.png" />
+    <Content Include="includes\images\collaspe_w.png" />
+    <Content Include="includes\images\customizecaret.png" />
+    <Content Include="includes\images\DA_Sprite.png" />
+    <Content Include="includes\images\Dc_Sprite.png" />
+    <Content Include="includes\images\dhd_sprite.png" />
+    <Content Include="includes\images\disable_left.png" />
+    <Content Include="includes\images\disable_right.png" />
+    <Content Include="includes\images\enable me_sprite.png" />
+    <Content Include="includes\images\enable_Left.png" />
+    <Content Include="includes\images\enable_right.png" />
+    <Content Include="includes\images\expand.png" />
+    <Content Include="includes\images\expand_w.png" />
+    <Content Include="includes\images\gray.jpg" />
+    <Content Include="includes\images\green-blue.jpg" />
+    <Content Include="includes\images\green-blue.png" />
+    <Content Include="includes\images\green-end.jpg" />
+    <Content Include="includes\images\green-end.png" />
+    <Content Include="includes\images\green-green.jpg" />
+    <Content Include="includes\images\green-green.png" />
+    <Content Include="includes\images\green-grey.jpg" />
+    <Content Include="includes\images\green-grey.png" />
+    <Content Include="includes\images\Green.png" />
+    <Content Include="includes\images\grey-end.jpg" />
+    <Content Include="includes\images\grey-end.png" />
+    <Content Include="includes\images\grey-grey.jpg" />
+    <Content Include="includes\images\grey-grey.png" />
+    <Content Include="includes\images\greytick.png" />
+    <Content Include="includes\images\Img-1.png" />
+    <Content Include="includes\images\Img-2.png" />
+    <Content Include="includes\images\LeftNav_active.png" />
+    <Content Include="includes\images\LeftNav_Normal.png" />
+    <Content Include="includes\images\leftSideArrow.PNG" />
+    <Content Include="includes\images\legend.png" />
+    <Content Include="includes\images\line.png" />
+    <Content Include="includes\images\minus green hover.png" />
+    <Content Include="includes\images\minus green normal.png" />
+    <Content Include="includes\images\pattern.png" />
+    <Content Include="includes\images\pattern1.png" />
+    <Content Include="includes\images\plus green hover.png" />
+    <Content Include="includes\images\plus green normal.png" />
+    <Content Include="includes\images\profile.PNG" />
+    <Content Include="includes\images\Profile_pic.png" />
+    <Content Include="includes\images\Red.png" />
+    <Content Include="includes\images\Red_arrow.png" />
+    <Content Include="includes\images\Red_arrowforwarning.png" />
+    <Content Include="includes\images\settings.png" />
+    <Content Include="includes\images\sideArrow.png" />
+    <Content Include="includes\images\spinnerDefault.png" />
+    <Content Include="includes\images\SpriteCPR_final.png" />
+    <Content Include="includes\images\Star_empety.png" />
+    <Content Include="includes\images\Star_fill.png" />
+    <Content Include="includes\images\temp\bAndGreyShadow.png" />
+    <Content Include="includes\images\temp\greyShadow.png" />
+    <Content Include="includes\images\temp\greyShadowFinal.png" />
+    <Content Include="includes\images\temp\mid.PNG" />
+    <Content Include="includes\images\temp\right_arrow.PNG" />
+    <Content Include="includes\images\toggle.png" />
+    <Content Include="includes\images\ttoggle_01.PNG" />
+    <Content Include="includes\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="includes\images\ui-icons_217bc0_256x240_bk.png" />
+    <Content Include="includes\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="includes\images\ui-icons_6da8d5_256x240_bk.png" />
+    <Content Include="includes\images\ui-icons_888888_256x240.png" />
+    <Content Include="includes\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="includes\images\ui-icons_d8e7f3_256x240_bk.png" />
+    <Content Include="includes\images\voilte.png" />
+    <Content Include="includes\images\wizard_3.png" />
+    <Content Include="includes\images\yellow.png" />
+    <Content Include="includes\js\angucomplete-alt.js" />
+    <Content Include="includes\js\angular-animate.min.js" />
+    <Content Include="includes\js\angular-aria.min.js" />
+    <Content Include="includes\js\angular-daterangepicker.js" />
+    <Content Include="includes\js\angular-material.min.js" />
+    <Content Include="includes\js\angular-messages.min.js" />
+    <Content Include="includes\js\angular-route.js" />
+    <Content Include="includes\js\angular-touch.min.js" />
+    <Content Include="includes\js\angular.min.js" />
+    <Content Include="includes\js\app\app.js" />
+    <Content Include="includes\js\app\controllers\homeCtrl.js" />
+    <Content Include="includes\js\app\controllers\rootCtrl.js" />
+    <Content Include="includes\js\app\directives\directives.js" />
+    <Content Include="includes\js\app\filters\filters.js" />
+    <Content Include="includes\js\app\services\ToDoService.js" />
+    <Content Include="includes\js\app\services\utility.js" />
+    <Content Include="includes\js\bootstrap-datepicker.js" />
+    <Content Include="includes\js\bootstrap.min.js" />
+    <Content Include="includes\js\calendar.js" />
+    <Content Include="includes\js\custombox.min.js" />
+    <Content Include="includes\js\daterangepicker.min.js" />
+    <Content Include="includes\js\datetimepicker.js" />
+    <Content Include="includes\js\datetimepicker.templates.js" />
+    <Content Include="includes\js\fullcalendar.min.js" />
+    <Content Include="includes\js\jquery.bxslider.min.js" />
+    <Content Include="includes\js\jQuery.js" />
+    <Content Include="includes\js\jquery.mCustomScrollbar.js" />
+    <Content Include="includes\js\jquery.plugin.js" />
+    <Content Include="includes\js\jquery.qtip.min.js" />
+    <Content Include="includes\js\jquery.timeentry.js" />
+    <Content Include="includes\js\jquery.viewport.min.js" />
+    <Content Include="includes\js\moment.min.js" />
+    <Content Include="includes\js\ng-table.min.js" />
+    <Content Include="includes\js\ng-tags-input.min.js" />
+    <Content Include="includes\js\script.js" />
+    <Content Include="includes\js\scrollbars.js" />
+    <Content Include="includes\js\svg-assets-cache.js" />
+    <Content Include="includes\js\tabs.js" />
+    <Content Include="includes\js\ui-bootstrap-tpls-0.11.0.js" />
+    <Content Include="includes\js\ui-bootstrap-tpls-2.4.0.min.js" />
+    <Content Include="includes\styles\angucomplete-alt.css" />
+    <Content Include="includes\styles\angular-material.min.css" />
+    <Content Include="includes\styles\animate.css" />
+    <Content Include="includes\styles\bootstrap-datepicker.css" />
+    <Content Include="includes\styles\bootstrap-select.css" />
+    <Content Include="includes\styles\bootstrap.min.css" />
+    <Content Include="includes\styles\custombox.min.css" />
+    <Content Include="includes\styles\daterangepicker.min.css" />
+    <Content Include="includes\styles\datetimepicker.css" />
+    <Content Include="includes\styles\fullcalendar.min.css" />
+    <Content Include="includes\styles\fullcalendar.print.min.css" />
+    <Content Include="includes\styles\jquery.bxslider.css" />
+    <Content Include="includes\styles\jquery.mCustomScrollbar.css" />
+    <Content Include="includes\styles\jquery.qtip.min.css" />
+    <Content Include="includes\styles\main.css" />
+    <Content Include="includes\styles\ng-table.min.css" />
+    <Content Include="includes\styles\ng-tags-input.min.css" />
+    <Content Include="includes\views\footer.html" />
+    <Content Include="includes\views\header.html" />
+    <Content Include="includes\views\leftView.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cognizant.DE.EnableMe.Entities\Cognizant.DE.EnableMe.Entities.csproj">
+      <Project>{56021cad-c66d-42b9-b4bf-dbba4b7a91af}</Project>
+      <Name>Cognizant.DE.EnableMe.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cognizant.DE.EnableMe.Services\Cognizant.DE.EnableMe.Services.csproj">
+      <Project>{6af7664b-95bc-4b44-a4d2-60c738570c6b}</Project>
+      <Name>Cognizant.DE.EnableMe.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63867</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63867/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,93 @@
+﻿<!-- Right Section - Start -->
+<!--<div ng-view autoscroll="true"></div>-->
+<div ng-controller="homeCtrl">
+    <div style="padding-left: 60px; padding-top: 60px;">
+        <div class="row">
+            <div class="col-md-2">
+                <div style="position: relative; height: 25px; padding: 5px; background-color: #404040;">
+                    <a class="basicFilter userRole pull-right" ng-click="toggleVertical();">{{selectedFilter.Vertical}}
+                    <span ng-class="{active: bDropDown.Vertical == true}"></span></a>
+                    <div class="customSelectBox basicFilterBox" style="position:relative;z-index:99;width:auto;background:#404040;" 
+                         ng-class="{active: bDropDown.Vertical == true}">
+                        <div ng-scrollbars ng-scrollbars-config="modalScrollbarConfig">
+                            <ul>
+                                <li ng-repeat="bf in basicFilter | unique:'VerticalName' | orderBy:'VerticalName'"
+                                    ng-click="selectVertical(bf.VerticalName)">{{bf.VerticalName}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div style="position: relative; height: 25px; padding: 5px; background-color: #404040;">
+                    <a class="basicFilter userRole pull-right" ng-click="togglePractice();">
+                        {{selectedFilter.Practice}}
+                        <span ng-class="{active: bDropDown.Practice == true}"></span>
+                    </a>
+                    <div class="customSelectBox basicFilterBox" style="position:relative;z-index:99;width:auto;background:#404040;"
+                         ng-class="{active: bDropDown.Practice == true}">
+                        <div ng-scrollbars ng-scrollbars-config="modalScrollbarConfig">
+                            <ul>
+                                <li ng-repeat="bf in basicFilter | unique:'PracticeName' | orderBy:'PracticeName'"
+                                    ng-click="selectPractice(bf.PracticeName)">{{bf.PracticeName}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div style="position: relative; height: 25px; padding: 5px; background-color: #404040;">
+                    <a class="basicFilter userRole pull-right" ng-click="toggleSubVertical();">
+                        {{selectedFilter.SubVertical}}
+                        <span ng-class="{active: bDropDown.SubVertical == true}"></span>
+                    </a>
+                    <div class="customSelectBox basicFilterBox" style="position:relative;z-index:99;width:auto;background:#404040;"
+                         ng-class="{active: bDropDown.SubVertical == true}">
+                        <div ng-scrollbars ng-scrollbars-config="modalScrollbarConfig">
+                            <ul>
+                                <li ng-repeat="bf in basicFilter | unique:'SubVerticalName' | orderBy:'SubVerticalName'"
+                                    ng-click="selectSubVertical(bf.SubVerticalName)">{{bf.SubVerticalName}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div style="position: relative; height: 25px; padding: 5px; background-color: #404040;">
+                    <a class="basicFilter userRole pull-right" ng-click="toggleParentAccount();">
+                        {{selectedFilter.ParentAccount}}
+                        <span ng-class="{active: bDropDown.ParentAccount == true}"></span>
+                    </a>
+                    <div class="customSelectBox basicFilterBox" style="position:relative;z-index:99;width:auto;background:#404040;"
+                         ng-class="{active: bDropDown.ParentAccount == true}">
+                        <div ng-scrollbars ng-scrollbars-config="modalScrollbarConfig">
+                            <ul>
+                                <li ng-repeat="bf in basicFilter | unique:'ParentAccountName' | orderBy:'ParentAccountName'"
+                                    ng-click="selectParentAccount(bf.ParentAccountName)">{{bf.ParentAccountName}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div style="position: relative; height: 25px; padding: 5px; background-color: #404040;">
+                    <a class="basicFilter userRole pull-right" ng-click="toggleAccount();">
+                        {{selectedFilter.Account}}
+                        <span ng-class="{active: bDropDown.Account == true}"></span>
+                    </a>
+                    <div class="customSelectBox basicFilterBox" style="position:relative;z-index:99;width:auto;background:#404040;"
+                         ng-class="{active: bDropDown.Account == true}">
+                        <div ng-scrollbars ng-scrollbars-config="modalScrollbarConfig">
+                            <ul>
+                                <li ng-repeat="bf in basicFilter | unique:'AccountName' | orderBy:'AccountName'"
+                                    ng-click="selectAccount(bf.AccountName)">{{bf.AccountName}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div ng-include="'includes/views/rightView.html'"></div>-->
+<!-- Right Section - End -->

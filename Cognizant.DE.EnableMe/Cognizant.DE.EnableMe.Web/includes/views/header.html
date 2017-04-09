@@ -1,0 +1,26 @@
+<!-- Header Section - Start -->
+<div class="pageHeader col-xs-12">
+    <a class="logo img-responsive"></a> 
+    <h3 class="pull-left">DE 2Do</h3>
+    <div class="userSec pull-right">
+      <div class="userImage pull-right"><img class="img-responsive lg-profilePic" src="includes/images/profile.png" alt="User Icon"/></div>
+      <div class="userDetail pull-right">
+      	<a class="userName pull-right">{{userName}}</a> 
+        <div class="clearfix"></div>
+      	<div style="position:relative">
+              <a class="userRole pull-right" ng-click="toggleRoleDropDown();">{{selectedRole.RoleName}} <span ng-class="{active: dropOpen == true}"></span></a>
+			<div class="customSelectBox" ng-class="{active: dropOpen == true}">
+               <div ng-scrollbars ng-scrollbars-config="modalScrollbarConfig"> 
+					<ul>
+                        <li ng-repeat="opt in roleOption" ng-click="selectOption(opt)">{{opt.RoleName}}</li>
+                    </ul>
+               </div> 
+            </div>
+		</div>
+      </div>
+    </div>
+    <a class="boxContainer pull-right"><span class="helpIcon"> </span></a>
+    <a class="boxContainer pull-right"><span class="eyeIcon"> </span></a>
+    <a class="boxContainer pull-right"><span class="notificationIcon"> <span class="notificationNumber">10</span></span></a>
+</div>
+<!-- Header Section - End --> 
