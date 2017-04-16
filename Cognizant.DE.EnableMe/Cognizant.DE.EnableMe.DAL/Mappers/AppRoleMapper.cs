@@ -23,8 +23,8 @@ namespace Cognizant.DE.EnableMe.DAL.Mappers
             {
                 return new AppRole()
                 {
-                    RoleID = (int)GetFieldValue<int>(r, "RoleID"),
-                    RoleName = (string)GetFieldValue<string>(r, "RoleName")
+                    ID = (int)GetFieldValue<int>(r, "ID"),
+                    Name = (string)GetFieldValue<string>(r, "Name")
                 };
             });
 

@@ -11,6 +11,12 @@ namespace Cognizant.DE.EnableMe.Entities
         public int ID { get; set; }
         public string EmployeeID { get; set; }
         public string Name { get; set; }
+        public string DisplayName { 
+            get 
+            {
+                return string.Format("{0} ({1})", Name, EmployeeID);
+            }
+        }
         public int RoleID { get; set; }
         public string RoleName { get; set; }
     }

@@ -16,8 +16,6 @@
     <link rel="stylesheet" type="text/css" href="includes/styles/angular-material.min.css" />
     <link rel="stylesheet" type="text/css" href="includes/styles/jquery.bxslider.css" />
     <link rel="stylesheet" type="text/css" href="includes/styles/animate.css" />
-    <link rel="stylesheet" type="text/css" href="includes/styles/ng-tags-input.min.css" />
-    <link rel="stylesheet" type="text/css" href="includes/styles/custombox.min.css" />
     <link rel="stylesheet" type="text/css" href="includes/styles/main.css" />
 </head>
 <body ng-app="ToDoApp">
@@ -33,7 +31,8 @@
     <script type="text/javascript">
         var APP = {};
         APP.app = {};
-        APP.basePath='@Url.Content("~/")';
+        APP.basePath = '@Url.Content("~/")';
+        APP.User=@Html.Raw(Json.Encode(ViewData["User"]));
     </script>
     <script type="text/javascript" src="includes/js/jQuery.js"></script>
     <script type="text/javascript" src="includes/js/angular.min.js"></script>
@@ -63,13 +62,7 @@
     <script type="text/javascript" src="includes/js/angular-material.min.js"></script>
     <script type="text/javascript" src="includes/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="includes/js/ui-bootstrap-tpls-2.4.0.min.js"></script>
-    <script type="text/javascript" src="includes/js/datetimepicker.js"></script>
-    <script type="text/javascript" src="includes/js/datetimepicker.templates.js"></script>
-    <script type="text/javascript" src="includes/js/tabs.js"></script>
-    <script type="text/javascript" src="includes/js/jquery.plugin.js"></script>
-    <script type="text/javascript" src="includes/js/jquery.timeentry.js"></script>
-    <script type="text/javascript" src="includes/js/ng-tags-input.min.js"></script>
-    <script type="text/javascript" src="includes/js/custombox.min.js"></script>
+    <script type="text/javascript" src="includes/js/angulargrid.js"></script>
     @*<script type="text/javascript" src="includes/js/app/app.js"></script>*@
     <script type="text/javascript" src="includes/js/script.js"></script>
     @Scripts.Render("~/bundles/js/app")

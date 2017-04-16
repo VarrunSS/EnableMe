@@ -9,6 +9,6 @@ namespace Cognizant.DE.EnableMe.DAL
 {
     public interface IAppRoleRepository
     {
-        IEnumerable<AppRole> Get(string associateID);
+        IEnumerable<AppRole> Get(int roleID);
     }
 }

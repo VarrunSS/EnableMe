@@ -72,8 +72,18 @@ if (!String.prototype.replaceAll) {
     };
 }
 
-APP.app = angular.module("ToDoApp", ["ngRoute", "nya.bootstrap.select", "ui.bootstrap.datetimepicker",
-    "ngTable", "ngMessages", "ngTouch", "angucomplete-alt", "ngScrollbars", "ngMaterial",
-    "material.svgAssetsCache", "tabs", "ngAnimate", "ui.bootstrap", 'ngTagsInput',
+APP.app = angular.module("ToDoApp", ["ngRoute", "nya.bootstrap.select", "ngMessages", "ngTouch", "angucomplete-alt", "ngScrollbars", "ngMaterial", "material.svgAssetsCache", "ngAnimate", "ui.bootstrap", "angularGrid",
 "ToDoApp.directives", "ToDoApp.controllers", "ToDoApp.services", "ToDoApp.filters"]);
 
+/*** Routing - Start ***/
+APP.app.config(function ($routeProvider) {
+    // $locationProvider.hashPrefix("!");
+    $routeProvider
+	.when("/dashboard", {
+	    templateUrl: "includes/views/dashboard.html"
+	})
+	.otherwise({
+	    templateUrl: "includes/views/dashboard.html"
+	});
+});
+/*** Routing - End ***/

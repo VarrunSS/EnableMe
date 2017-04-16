@@ -35,3 +35,40 @@ c:\users\jagan\documents\visual studio 2013\Projects\Cognizant.DE.EnableMe\Cogni
 c:\users\jagan\documents\visual studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\obj\Debug\Cognizant.DE.EnableMe.Web.Tests.csprojResolveAssemblyReference.cache
 c:\users\jagan\documents\visual studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\obj\Debug\Cognizant.DE.EnableMe.Web.Tests.dll
 c:\users\jagan\documents\visual studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\obj\Debug\Cognizant.DE.EnableMe.Web.Tests.pdb
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Web.Tests.dll.config
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Web.Tests.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Web.Tests.pdb
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Web.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Http.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Services.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Entities.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.DAL.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Web.pdb
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Http.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Services.pdb
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.Entities.pdb
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\bin\Debug\Cognizant.DE.EnableMe.DAL.pdb
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\obj\Debug\Cognizant.DE.EnableMe.Web.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\obj\Debug\Cognizant.DE.EnableMe.Web.Tests.dll
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Web.Tests\obj\Debug\Cognizant.DE.EnableMe.Web.Tests.pdb

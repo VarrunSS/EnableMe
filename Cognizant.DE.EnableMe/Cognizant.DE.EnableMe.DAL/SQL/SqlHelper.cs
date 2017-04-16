@@ -33,7 +33,7 @@ namespace Cognizant.DE.EnableMe.DAL.SQL
             }
         }
 
-        public DataTable Fetch(string query, IDictionary<string, object> parameters)
+        public DataTable Fetch(string query, IDictionary<string, object> parameters, bool isProcedure)
         {
             OpenConnection();
 
@@ -43,6 +43,10 @@ namespace Cognizant.DE.EnableMe.DAL.SQL
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.AddParamatersIfAny(parameters);
+                if(isProcedure)
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                }
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
             }
@@ -54,7 +58,7 @@ namespace Cognizant.DE.EnableMe.DAL.SQL
             return dt;
         }
 
-        public void Change(string query, IDictionary<string, object> parameters)
+        public void Change(string query, IDictionary<string, object> parameters, bool isProcedure)
         {
             OpenConnection();
 
@@ -62,6 +66,10 @@ namespace Cognizant.DE.EnableMe.DAL.SQL
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.AddParamatersIfAny(parameters);
+                if (isProcedure)
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                }
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)

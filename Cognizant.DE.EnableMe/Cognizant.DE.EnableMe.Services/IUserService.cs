@@ -10,7 +10,8 @@ namespace Cognizant.DE.EnableMe.Services
     public interface IUserService
     {
         AppUser GetUserDetails(string associateID);
-        IEnumerable<AppRole> GetUserRoles(string associateID);
-        IEnumerable<BasicFilter> GetUserBasicFilter(string associateID, int roleID);
+        IEnumerable<AppUser> SearchUserDetails(int key);
+        IEnumerable<AppRole> GetUserRoles(int roleID);
+        IEnumerable<BasicFilter> GetUserBasicFilter(int userID, int roleID);
     }
 }

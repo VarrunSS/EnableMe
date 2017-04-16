@@ -17,20 +17,20 @@ namespace Cognizant.DE.EnableMe.Web.API
         {
             userService = new UserService();
         }
-        [Route("profile")]
-        public AppUser GetUserProfile(int id)
+        [Route("search")]
+        public HttpResponseMessage GetSearchUser(int key)
         {
-            return userService.GetUserDetails(id.ToString());
+            return Request.CreateResponse<IEnumerable<AppUser>>(HttpStatusCode.OK,userService.SearchUserDetails(key));
         }
         [Route("roles")]
-        public IEnumerable<AppRole> GetUserRoles(int id)
+        public HttpResponseMessage GetUserRoles(int roleID)
         {
-            return userService.GetUserRoles(id.ToString());
+            return Request.CreateResponse<IEnumerable<AppRole>>(HttpStatusCode.OK, userService.GetUserRoles(roleID));
         }
         [Route("basicfilter")]
-        public IEnumerable<BasicFilter> GetUserBasicFilter(int id, int roleID)
+        public HttpResponseMessage GetUserBasicFilter(int userID, int roleID)
         {
-            return userService.GetUserBasicFilter(id.ToString(),roleID);
+            return Request.CreateResponse<IEnumerable<BasicFilter>>(HttpStatusCode.OK, userService.GetUserBasicFilter(userID,roleID));
         }
     }
 }

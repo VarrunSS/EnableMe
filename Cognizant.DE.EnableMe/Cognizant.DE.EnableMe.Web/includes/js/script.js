@@ -6,7 +6,7 @@ $(window).scroll(function(event){
    if (st > lastScrollTop){
 	   // downscroll code
 	   scrollDirection = "down";
-	 $('.carouselFixedWrapper').removeClass('fixed');
+	 $('.carouselFixedWrapper').addClass('fixed');
 	 $('.wizardHeader').addClass('fixed');
 	 $('.categorizeFindings .buttonContainer').addClass('fixed');
 	 $('.tableContainer .tblParamHead').removeClass('fixed');

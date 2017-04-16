@@ -1,0 +1,566 @@
+<div class="rightWrapper dashboard" ng-controller="dashboardCtrl"> 
+  <!-- Main Content - Start -->
+  <div class="mainContent">
+    <div class="container-fluid">
+      <div class="row"> 
+          <!-- Admin Section - Start -->
+          <div class="col-xs-12" style="padding-top:10px;">
+              <div class="col-xs-12 filterSec grid6" ng-show="showUserSwitch">
+                  <form class="col-xs-12 form-horizontal noPadding">
+                      <div class="col-md-6 col-xs-6 col-sm-6  pull-left noPaddingLeft">
+                          <label class="pull-left control-label customMargin">Enter User ID</label>
+                          <div class=" selectWrapper selectContainer pull-left">
+                              <input type="text" ng-model="switchedUser" placeholder="Enter User"
+                                     uib-typeahead="user as user.DisplayName for user in searchUser($viewValue)"
+                                     typeahead-loading="loadingLocations"
+                                     typeahead-min-length=3
+                                     typeahead-no-results="noResults" class="form-control">
+                              <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                              <div ng-show="noResults">
+                                  <i class="glyphicon glyphicon-remove"></i> No Results Found
+                              </div>
+                          </div>
+                      </div>
+                      <button type="button" class="btn btn-primary  buttonCont primaryBtn"
+                              ng-click="switchUser();">
+                          Apply
+                      </button>
+                      <button type="button" class="btn btn-primary  buttonCont secondaryBtn">Reset</button>
+                  </form>
+              </div>
+          </div>
+          <!-- Admin Section - End -->   
+        <!-- Inner Content - Start -->
+        <div class="col-xs-12 noPadding">
+          <div class="innerContent">
+            <h4 class="col-xs-1 pageTitle">Dashboard</h4>
+            <div class="dashboardSelect">
+              <div class=" selectWrapper selectContainer pull-left">
+                <ol class="nya-bs-select  " ng-model="selectedEntry" data-size="5">
+                    <li nya-bs-option="option in entryFilter "> <a> {{option.name}} </a> </li>
+                </ol>
+              </div>
+              <div class=" selectWrapper selectContainer pull-left">
+                  <ol class="nya-bs-select  " ng-model="selectedPerformance" data-size="5">
+                      <li nya-bs-option="option in performanceFilter "> <a> {{option.name}} </a> </li>
+                  </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Breadcrumb - Start -->
+        <div class="breadcrumbCont col-xs-12">
+          <ul class="pull-left col-xs-9">
+              <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(32,basicFilterKey)">
+                  <div class=" selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select  " ng-model="$parent.selectedGroup" actions-box="true" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter | unique:'GroupID' | orderBy:'GroupName' ">
+                              <a> {{option.GroupName}} </a>
+                          </li>
+                      </ol>
+                  </div>
+              </li>
+              <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(64,basicFilterKey)">
+                  <div class=" selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select" ng-model="$parent.selectedBU" actions-box="true" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter | unique:'BUID' | orderBy:'BUName' ">
+                              <a> {{option.BUName}} </a>
+                          </li>
+                      </ol>
+                  </div>
+              </li>
+              <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(128,basicFilterKey)">
+                  <div class=" selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select" ng-model="$parent.selectedSBU" actions-box="true" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter | unique:'SBUID' | orderBy:'SBUName' ">
+                              <a> {{option.SBUName}} </a>
+                          </li>
+                      </ol>
+                  </div>
+              </li>
+              <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(2,basicFilterKey)">
+                  <div class=" selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select dropbox" ng-model="$parent.selectedPractice" actions-box="true" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter | unique:'PracticeID' | orderBy:'PracticeName' ">
+                              <a> {{option.PracticeName}} </a>
+                          </li>
+                      </ol>
+                  </div>
+              </li>
+              <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(1,basicFilterKey)">
+                  <div class="selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedVertical" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter | unique:'VerticalID' | orderBy:'VerticalName'">
+                              <a> {{option.VerticalName}} </a>
+                          </li>
+                      </ol>
+                  </div>
+              </li>
+            <!--<li class="pull-left breadcrumbList noPadding ">
+              <div class=" selectWrapper selectContainer pull-left">
+                <ol class="nya-bs-select  " ng-model="bu" actions-box="true" data-size="5" multiple>
+                    <li nya-bs-option="option in basicFilter | unique:'PracticeID' | orderBy:'PracticeName' "> 
+                        <a> {{option.PracticeName}} </a> </li>
+                </ol>
+              </div>
+            </li>-->
+              <li class="pull-left breadcrumbList noPadding" ng-if="bitAND(4,basicFilterKey)">
+                  <div class=" selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedSubVertical" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter | unique:'SubVerticalID' | orderBy:'SubVerticalName'">
+                              <a> {{option.SubVerticalName}} </a>
+                          </li>
+                      </ol>
+                  </div>
+              </li>
+              <li class="pull-left breadcrumbList noPadding" ng-if="bitAND(8,basicFilterKey)">
+                  <div class=" selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedParentAccount" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter | unique:'ParentAccountID' | orderBy:'ParentAccountName'">
+                              <a> {{option.ParentAccountName}} </a>
+                          </li>
+                      </ol>
+                  </div>
+              </li>
+              <li class="pull-left breadcrumbList noPadding last" ng-if="bitAND(16,basicFilterKey)">
+                  <div class=" selectWrapper selectContainer pull-left">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedAccount" data-size="5" multiple live-search="true">
+                          <li nya-bs-option="option in basicFilter | unique:'AccountID' | orderBy:'AccountName'">
+                              <a> {{option.AccountName}} </a>
+                          </li>
+                      </ol>       
+                  </div>
+              </li>
+          </ul>        
+            <button type="button" class="btn btn-primary  buttonCont primaryBtn" ng-click="loadFilterData();">Apply </button>
+            <button type="button" class="btn btn-primary  buttonCont secondaryBtn">Reset</button> 
+          <button type="button" class="btn-default pull-right btnFilter btnCyan" ng-click="toggleFilter()">{{toggleText}} <span class="iconFilter"></span> </button>
+          <!-- Filter Section - Start -->
+          <div class="col-xs-12 filterSec grid6" ng-hide="filter">
+            <form class="col-xs-12 form-horizontal noPadding">
+              <div class="col-md-3 col-xs-3 col-sm-3  pull-left noPaddingLeft">
+                <label class="pull-left control-label customMargin">Service Line</label>
+                <div class=" selectWrapper selectContainer pull-left">
+                  <ol class="nya-bs-select" ng-model="serviceLine" data-size="5" multiple>
+                    <li nya-bs-option="option in serviceLineOption"> <a> {{option}} </a> </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-3 col-sm-3  pull-left noPaddingLeft">
+                <label class="  pull-left control-label customMargin">Project Category</label>
+                <div class=" selectWrapper selectContainer pull-left">
+                  <ol class="nya-bs-select " ng-model="projectCategory" data-size="5" multiple>
+                    <li nya-bs-option="option in projectCategoryOption"> <a> {{option}} </a> </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-3 col-sm-3  pull-left noPaddingLeft">
+                <label class="  pull-left control-label customMargin">Billability</label>
+                <div class=" selectWrapper selectContainer pull-left">
+                  <ol class="nya-bs-select " ng-model="billability" data-size="5" multiple>
+                    <li nya-bs-option="option in billabilityOption"> <a> {{option}} </a> </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-3 col-sm-3  pull-left noPaddingLeft">
+                <label class="  pull-left control-label customMargin">Tracking Platform</label>
+                <div class=" selectWrapper selectContainer pull-left">
+                  <ol class="nya-bs-select " ng-model="trackingPlatform" data-size="5" multiple>
+                    <li nya-bs-option="option in trackingPlatformOption"> <a> {{option}} </a> </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-3 col-sm-3  pull-left noPaddingLeft noMarginBottom">
+                <label class="  pull-left control-label customMargin">Sub Solution Area</label>
+                <div class=" selectWrapper selectContainer pull-left">
+                  <ol class="nya-bs-select " ng-model="subSolutionArea" data-size="5" multiple>
+                    <li nya-bs-option="option in subSolutionAreaOption"> <a> {{option}} </a> </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-3 col-sm-3  pull-left noPaddingLeft noMarginBottom">
+                <label class="  pull-left control-label customMargin">Scope</label>
+                <div class=" selectWrapper selectContainer pull-left">
+                  <ol class="nya-bs-select " ng-model="scope" data-size="5" multiple>
+                    <li nya-bs-option="option in scopeOption"> <a> {{option}} </a> </li>
+                  </ol>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary  buttonCont primaryBtn">Apply </button>
+              <button type="button" class="btn btn-primary  buttonCont secondaryBtn">Reset</button>
+            </form>
+          </div>
+          <!-- Filter Section - End --> 
+        </div>
+        <!-- Breadcrumb - End --> 
+        <!-- BX-Slider - Start -->
+        <div class="col-xs-12 noPadding">
+            <div class="subHeading">Widget View</div>
+            <div class="viewBtnSection pull-right">        
+                <div class="viewBtn"><div class="defaultView"></div></div>
+                <div class="viewBtn disable"><div class="streamView"></div></div> 
+            </div>
+        </div>
+        <div class="carouselFixedWrapper">
+          <div class="carouselWrapper">
+            <div class="doc-list-wrapper" data-docs="docs" data-selectedmenu="selectedmenu"></div>
+          </div>
+        </div>
+        <script type="text/ng-template" id="tmpl-doc-list-wrapper">
+          <ul class="doc-list sliderWrapper" ng-init="selectedmenu=0" bx-slider>
+              <li class="doc-thumbnail carouselList" data-id={{$index}}  ng-repeat="doc in docs" ng-class="{active: selectedmenu == $index}" bx-slider-item>
+                  <a data-src={{$index+1}} class="deal{{$index+1}}" rel="external" ng-click="myclick($index+1,doc.type)">
+						<span class="score">{{doc.score}}</span>
+                       <span class="stageName" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title={{doc.stageName}} >{{doc.stageName}}</span>      
+					   <span class="infoIcon" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title={{doc.stageName}} ></span>                       
+                  </a>
+              </li>
+          </ul>
+        </script> 
+        <!-- BX-Slider - End --> 
+        <!-- High Alert - Start -->
+        <div class="highAlertSection">
+          <div class="widgetHead">
+            <div class="widgetHeading">
+            	<span>High Alert</span>
+				<span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+            </div>
+          </div>
+          <div class="widgetBodyWrapper col-xs-12 noPadding">
+            <div class="widgetBody col-xs-12 noPadding">
+              <div class="WidgetSubSectionWrapper col-xs-6">
+                <div class="widgetSubSection redSection"> <span class="score">10</span> <span class="scoreLabel">All Delivery Health Parameters in RED</span> </div>
+              </div>
+              <div class="WidgetSubSectionWrapper col-xs-6 noPaddingLeft">
+                <div class="widgetSubSection redSection"> <span class="score">10</span> <span class="scoreLabel">Project Trending RED in 3 Months</span> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- High Alert - End --> 
+        <!-- Grid View - Widget - Start -->
+        <div class="widgetWrapper">
+          <ul class="col-xs-12 dynamic-grid" angular-grid grid-width="410" gutter-size="10">
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">Scope and Categorization</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody col-xs-12 noPadding">
+                <div class="widgetSubHead col-xs-12 noPaddingTop">Yet to be Scoped</div>
+                <div class="WidgetSubSectionWrapper col-xs-6">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">&gt; 5</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper col-xs-6 noPaddingLeft">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">&lt;= 5</div>
+                  </div>
+                </div>
+                <div class="widgetSubHead col-xs-12">Yet to be Categorized</div>
+                <div class="WidgetSubSectionWrapper col-xs-6">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">&gt; 5</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper col-xs-6 noPaddingLeft">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">&lt;= 5</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">Kick - Off</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody col-xs-12 noPadding">
+                <div class="WidgetSubSectionWrapper col-xs-6 marginBottom">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">30</div>
+                    <div class="scoreLabel">KO Overdue</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper col-xs-6 noPaddingLeft marginBottom">
+                  <div class="widgetSubSection">
+                    <div class="score">30</div>
+                    <div class="scoreLabel">KO Due</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">30</div>
+                    <div class="scoreLabel">KO Conducted</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">PMR</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody">
+                <div class="WidgetSubSectionWrapper col-xs-4 marginBottom">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Ageing &gt; 45 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft marginBottom col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Due in 10 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft marginBottom col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Ageing &lt;= 45 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Not Conducted</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom noPaddingLeft col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Audit Logging Pending</div>
+                  </div>
+                </div>
+                <div class="widgetSubHead col-xs-12">Actionable</div>
+                <div class="WidgetSubSectionWrapper col-xs-4">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Overdue</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Due</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel twoLineLabel">Due for Closure this Month</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">Risks</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody">
+                <div class="WidgetSubSectionWrapper marginBottom col-xs-4">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel twoLineLabel">Workable High Risk&gt;=2</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom noPaddingLeft col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">No Open Risk</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom noPaddingLeft col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Overdue Risks</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Due for Closure in a Week</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom noPaddingLeft col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">No Mitigation Plan</div>
+                  </div>
+                </div>
+                <div class="widgetSubHead col-xs-12">Assessment Yet to be Completed</div>
+                <div class="WidgetSubSectionWrapper col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">New Project</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Existing Project</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">Findings</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody">
+                <table class="findingsTable">
+                  <thead>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th>Overdue</th>
+                      <th>Due</th>
+                      <th>Closure of This Month</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>NC</td>
+                      <td><div class="findingsWrapper redSection">0</div></td>
+                      <td><div class="findingsWrapper">1234</div></td>
+                      <td><div class="findingsWrapper">123456</div></td>
+                    </tr>
+                    <tr>
+                      <td>OBS</td>
+                      <td><div class="findingsWrapper redSection">123</div></td>
+                      <td><div class="findingsWrapper">12345</div></td>
+                      <td><div class="findingsWrapper">0</div></td>
+                    </tr>
+                    <tr>
+                      <td>SMR</td>
+                      <td><div class="findingsWrapper redSection">12</div></td>
+                      <td><div class="findingsWrapper">4521</div></td>
+                      <td><div class="findingsWrapper">10</div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">Codenizant</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody">
+                <div class="WidgetSubSectionWrapper marginBottom col-xs-12">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Codenizant Audit not Conducted in Last 60 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Omega Score &lt; Threshold</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">CEP's &lt;= Benchmark</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">QoS</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody">
+                <div class="WidgetSubSectionWrapper marginBottom col-xs-12">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Projects that have Declared SLAs and not Submitted SLA data</div>
+                  </div>
+                </div>
+                <div class="col-xs-12 widgetSubHead">Project with CpK&lt;1</div>
+                <div class="WidgetSubSectionWrapper col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Discreet</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Continous</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid">
+              <div class="widgetHead">
+                <div class="widgetHeading">Audits</div>
+                <span class="infoIcon pull-right" tooltip data-container="body" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum Lorem ipsum"></span>
+              </div>
+              <div class="widgetBody">
+                <div class="col-xs-12 widgetSubHead noPaddingTop">PMR Ageing</div>
+                <div class="WidgetSubSectionWrapper col-xs-4 marginBottom">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">&gt; 45 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft marginBottom col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">&lt;= 45 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft marginBottom col-xs-4">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Not Once</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom col-xs-6">
+                  <div class="widgetSubSection redSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Codenizant Audit &gt;= 60 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper marginBottom noPaddingLeft col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Audit Logging Pending</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Audits due in 10 Days</div>
+                  </div>
+                </div>
+                <div class="WidgetSubSectionWrapper noPaddingLeft col-xs-6">
+                  <div class="widgetSubSection">
+                    <div class="score">10</div>
+                    <div class="scoreLabel">Due in 10 Days</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Grid View - Widget - Start --> 
+        <!-- Inner Content - End --> 
+      </div>
+    </div>
+  </div>
+  <!-- Main Content - End -->
+  <div class='clearfix'></div>
+  <!-- Footer Section - Start -->
+  <div ng-include="'includes/views/footer.html'"></div>
+  <!-- Footer Section - End --> 
+</div>

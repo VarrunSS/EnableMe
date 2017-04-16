@@ -9,6 +9,6 @@ namespace Cognizant.DE.EnableMe.DAL
 {
     public interface IBasicFilterRepository
     {
-        IEnumerable<BasicFilter> Get(string associateID, int roleID);
+        IEnumerable<BasicFilter> Get(int userID, int roleID);
     }
 }

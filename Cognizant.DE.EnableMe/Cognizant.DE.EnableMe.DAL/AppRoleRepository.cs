@@ -9,21 +9,13 @@ namespace Cognizant.DE.EnableMe.DAL
 {
     public class AppRoleRepository : GenericRepository<AppRole>,IAppRoleRepository
     {
-        public IEnumerable<AppRole> Get(string associateID)
+        public IEnumerable<AppRole> Get(int roleID)
         {
             IEnumerable<AppRole> result = new List<AppRole>();
-            string query = @"select 
-                            Distinct
-                            ar.ID as RoleID,
-                            ar.RoleName
-                            from ProjectRoleMapping as pr
-                            join AppRoles ar
-                            on pr.RoleID=ar.ID
-                            where AssociateID=@AssociateID;
-                            ";
+            string query = "upsGetRoles";
             IDictionary<string, object> paramaters= new Dictionary<string, object>();
-            paramaters.Add("AssociateID",associateID);
-            result = Get(query, paramaters);
+            paramaters.Add("roleID", roleID);
+            result = Get(query, paramaters,true);
             return result;
         }
     }

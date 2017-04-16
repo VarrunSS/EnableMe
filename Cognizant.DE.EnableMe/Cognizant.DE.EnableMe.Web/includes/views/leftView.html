@@ -2,10 +2,18 @@
 <div class="leftSec" >
   <div class="listing mainMenu">
     <ul class="dropdownCont mainMenuList" >
-      <li class="dropdown leftMenuList" ng-click="activateMenu(1)" ng-class="{hovering: item.over,open: activeleftMenu == 1}" tooltip data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard"> <a href="#dashboard" class="menuIconWrapper"> <span class="dashboardIcon menuIcon"></span> </a> </li>     
-      <li class="dropdown leftMenuList" ng-click="activateMenu(3)" ng-class="{hovering1: item1.over,open: activeleftMenu == 3}" tooltip data-toggle="tooltip" data-placement="right" title="" data-original-title="Reports"> <a href="#auditReports" class="menuIconWrapper"> <span class="performAssessmentIcon menuIcon"></span> </a></li>     
-    </ul>    
-  </div>
+      <li class="dropdown leftMenuList" ng-click="activateMenu(1)" 
+          ng-class="{hovering: item.over,open: activeleftMenu == 1}" 
+          tooltip data-toggle="tooltip" data-placement="right" title="" 
+          data-original-title="Dashboard"> 
+          <a href="#dashboard" class="menuIconWrapper"> 
+          <span class="dashboardIcon menuIcon"></span> 
+          </a> 
+      </li>
+      <li class="dropdown leftMenuList" ng-click="activateMenu(2)" 
+          ng-class="{hovering: item.over,open: activeleftMenu == 2}"> 
+      	<a href="#" class="menuIconWrapper"> <span class="performAssessmentIcon menuIcon"></span> </a>  </li>      
+    </ul>
 </div>
 <!--Left Section Ends--> 
 

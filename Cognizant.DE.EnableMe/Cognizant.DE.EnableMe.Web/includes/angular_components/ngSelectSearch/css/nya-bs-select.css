@@ -55,7 +55,7 @@
 
 /*** Customization - Assessment - Start ***/
 /*** Left Menu Select - Start ***/
-.nya-bs-select li a{word-break: break-all;width: 100%;white-space: normal;}
+.nya-bs-select li a{word-break: break-word;width: 100%;white-space: normal;}
 .nya-bs-select.btn-group .dropdown-menu{max-height: 200px;}
 .nya-bs-select.btn-group .dropdown-menu.inner{overflow-y:auto;}
 .selectWrap .nya-bs-select.btn-group .dropdown-menu {border: none;width: 100%;}

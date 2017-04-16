@@ -24,16 +24,20 @@ namespace Cognizant.DE.EnableMe.Services
         {
             return appUserRepository.Get(associateID);
         }
-
-        public IEnumerable<AppRole> GetUserRoles(string associateID)
+        public IEnumerable<AppUser> SearchUserDetails(int key)
         {
-            return appRoleRepository.Get(associateID);
+            return appUserRepository.Search(key);
+        }
+
+        public IEnumerable<AppRole> GetUserRoles(int roleID)
+        {
+            return appRoleRepository.Get(roleID);
         }
 
 
-        public IEnumerable<BasicFilter> GetUserBasicFilter(string associateID, int roleID)
+        public IEnumerable<BasicFilter> GetUserBasicFilter(int userID, int roleID)
         {
-            return basicFilterRepository.Get(associateID, roleID);
+            return basicFilterRepository.Get(userID, roleID);
         }
     }
 }

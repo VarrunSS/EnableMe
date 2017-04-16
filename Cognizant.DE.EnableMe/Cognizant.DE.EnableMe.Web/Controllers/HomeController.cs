@@ -18,8 +18,7 @@ namespace Cognizant.DE.EnableMe.Web.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            AppUser appUser = userService.GetUserDetails("439966");
-            IEnumerable<AppRole> appRole = userService.GetUserRoles("439966");
+            ViewData["User"] = userService.GetUserDetails("439966");
             return View();
         }
     }

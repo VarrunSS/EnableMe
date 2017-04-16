@@ -8,7 +8,7 @@ namespace Cognizant.DE.EnableMe.Entities
 {
     public class AppRole : IEntity
     {
-        public int RoleID { get; set; }
-        public string RoleName { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
     }
 }

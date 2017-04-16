@@ -10,5 +10,6 @@ namespace Cognizant.DE.EnableMe.DAL
     public interface IAppUserRepository
     {
         AppUser Get(string associateID);
+        IEnumerable<AppUser> Search(int key);
     }
 }

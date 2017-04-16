@@ -25,7 +25,8 @@ namespace Cognizant.DE.EnableMe.DAL.Mappers
                 {
                     ID = (int)GetFieldValue<int>(r, "ID"),
                     EmployeeID = (string)GetFieldValue<string>(r, "EmployeeID"),
-                    Name = (string)GetFieldValue<string>(r, "Name")
+                    Name = (string)GetFieldValue<string>(r, "Name"),
+                    RoleID = (int)GetFieldValue<int>(r, "RoleID")
                 };
             });
 

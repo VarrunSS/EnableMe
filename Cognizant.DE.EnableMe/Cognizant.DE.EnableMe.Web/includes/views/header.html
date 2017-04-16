@@ -5,14 +5,17 @@
     <div class="userSec pull-right">
       <div class="userImage pull-right"><img class="img-responsive lg-profilePic" src="includes/images/profile.png" alt="User Icon"/></div>
       <div class="userDetail pull-right">
-      	<a class="userName pull-right">{{userName}}</a> 
+      	<a class="userName pull-right">{{user.Name}}</a> 
         <div class="clearfix"></div>
       	<div style="position:relative">
-              <a class="userRole pull-right" ng-click="toggleRoleDropDown();">{{selectedRole.RoleName}} <span ng-class="{active: dropOpen == true}"></span></a>
+              <a class="userRole pull-right" ng-click="toogleRoleDropDown();">
+                  {{selectedRole.Name}}
+                  <span ng-class="{active: dropOpen == true}"></span>
+              </a>
 			<div class="customSelectBox" ng-class="{active: dropOpen == true}">
-               <div ng-scrollbars ng-scrollbars-config="modalScrollbarConfig"> 
+               <div> 
 					<ul>
-                        <li ng-repeat="opt in roleOption" ng-click="selectOption(opt)">{{opt.RoleName}}</li>
+                        <li ng-repeat="opt in userRoles" ng-click="selectOption(opt)">{{opt.Name}}</li>
                     </ul>
                </div> 
             </div>
@@ -20,7 +23,7 @@
       </div>
     </div>
     <a class="boxContainer pull-right"><span class="helpIcon"> </span></a>
-    <a class="boxContainer pull-right"><span class="eyeIcon"> </span></a>
+    <a class="boxContainer pull-right" ng-click="toogleUserSwitch();"><span class="eyeIcon"> </span></a>
     <a class="boxContainer pull-right"><span class="notificationIcon"> <span class="notificationNumber">10</span></span></a>
 </div>
 <!-- Header Section - End --> 

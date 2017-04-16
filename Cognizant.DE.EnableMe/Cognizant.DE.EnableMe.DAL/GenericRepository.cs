@@ -17,23 +17,23 @@ namespace Cognizant.DE.EnableMe.DAL
         public GenericRepository()
         {
         }
-        protected IEnumerable<TEntity> Get(string query,IDictionary<string, object> paramaters)
+        protected IEnumerable<TEntity> Get(string query, IDictionary<string, object> paramaters, bool isProcedure)
         {
             IEnumerable<TEntity> entities = default(IEnumerable<TEntity>);
             using (SqlHelper sqlHelper = new SqlHelper())
             {
-                DataTable dt = sqlHelper.Fetch(query, paramaters);
+                DataTable dt = sqlHelper.Fetch(query, paramaters,isProcedure);
                 entities = dt.MapTo<TEntity>();
             }
 
             return entities;
         }
 
-        protected void Change(string query, IDictionary<string, object> paramaters)
+        protected void Change(string query, IDictionary<string, object> paramaters, bool isProcedure)
         {
             using (SqlHelper sqlHelper = new SqlHelper())
             {
-                sqlHelper.Change(query, paramaters);
+                sqlHelper.Change(query, paramaters,isProcedure);
             }
         }
 

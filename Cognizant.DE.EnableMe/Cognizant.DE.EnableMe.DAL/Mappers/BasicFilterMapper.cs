@@ -30,7 +30,19 @@ namespace Cognizant.DE.EnableMe.DAL.Mappers
                     PracticeName = (string)GetFieldValue<string>(r, "PracticeName"),
                     SubVerticalName = (string)GetFieldValue<string>(r, "SubVerticalName"),
                     ParentAccountName = (string)GetFieldValue<string>(r, "ParentAccountName"),
-                    AccountName = (string)GetFieldValue<string>(r, "AccountName")
+                    AccountName = (string)GetFieldValue<string>(r, "AccountName"),
+                    GroupID = (string)GetFieldValue<string>(r, "Group"),
+                    BUID = (string)GetFieldValue<string>(r, "BU"),
+                    SBUID = (string)GetFieldValue<string>(r, "SBU"),
+                    VerticalID = (string)GetFieldValue<string>(r, "Vertical"),
+                    PracticeID = (string)GetFieldValue<string>(r, "Practice"),
+                    SubVerticalID = (string)GetFieldValue<string>(r, "SubVertical"),
+                    ParentAccountID = (string)GetFieldValue<string>(r, "ParentAccount"),
+                    AccountID = (string)GetFieldValue<string>(r, "Account"),
+                    EntryBitKey = (int)GetFieldValue<int>(r, "EntryBitKey"),
+                    PerformanceBitKey = (int)GetFieldValue<int>(r, "PerformanceBitKey"),
+                    BasicBitKey = (int)GetFieldValue<int>(r, "BasicBitKey"),
+                    PrefilledBitKey = (int)GetFieldValue<int>(r, "PrefilledBitKey")
                 };
             });
 

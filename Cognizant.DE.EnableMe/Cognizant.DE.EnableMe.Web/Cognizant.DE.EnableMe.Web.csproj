@@ -269,8 +269,9 @@
     <Content Include="includes\js\angular-route.js" />
     <Content Include="includes\js\angular-touch.min.js" />
     <Content Include="includes\js\angular.min.js" />
+    <Content Include="includes\js\angulargrid.js" />
     <Content Include="includes\js\app\app.js" />
-    <Content Include="includes\js\app\controllers\homeCtrl.js" />
+    <Content Include="includes\js\app\controllers\dashboardCtrl.js" />
     <Content Include="includes\js\app\controllers\rootCtrl.js" />
     <Content Include="includes\js\app\directives\directives.js" />
     <Content Include="includes\js\app\filters\filters.js" />
@@ -317,6 +318,7 @@
     <Content Include="includes\styles\main.css" />
     <Content Include="includes\styles\ng-table.min.css" />
     <Content Include="includes\styles\ng-tags-input.min.css" />
+    <Content Include="includes\views\dashboard.html" />
     <Content Include="includes\views\footer.html" />
     <Content Include="includes\views\header.html" />
     <Content Include="includes\views\leftView.html" />
