@@ -42,6 +42,7 @@
     <Compile Include="AppRole.cs" />
     <Compile Include="AppUser.cs" />
     <Compile Include="BasicFilter.cs" />
+    <Compile Include="FilterInput.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

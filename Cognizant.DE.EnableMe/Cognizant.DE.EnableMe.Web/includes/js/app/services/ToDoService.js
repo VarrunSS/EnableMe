@@ -1,7 +1,8 @@
 ﻿APP.app.constant("ToDoConfig", {
     roles: 'api/user/roles',
     search: 'api/user/search',
-    basicFilter: 'api/user/basicfilter'
+    basicFilter: 'api/user/basicfilter',
+    filterData:'api/user/filterdata'
 })
 APP.app.factory("ToDoService", ["$http", "utility", "ToDoConfig", function ($http, utility, ToDoConfig) {
 
@@ -20,6 +21,14 @@ APP.app.factory("ToDoService", ["$http", "utility", "ToDoConfig", function ($htt
             return $http.get(utility.resolveUrl(ToDoConfig.basicFilter), {
                 params: { userID: userID, roleID: roleID }
             });
+        },
+        getFilterData: function (data) {
+            return $http.post(utility.resolveUrl(ToDoConfig.filterData), JSON.stringify(data),
+                    {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
         }
     }
 }]);

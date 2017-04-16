@@ -85,7 +85,6 @@
     };
     $scope.GetUserBasicFilter = function (userID,roleID) {
         ToDoService.getBasicFilter(userID, roleID).success(function (data) {
-            console.log(data.length);
             if (data != null) {
                 $scope.basicFilter = data;
                 $scope.basicFilterKey = $scope.findDistinctSum($scope.basicFilter, 'BasicBitKey');
@@ -106,15 +105,18 @@
     });
     $scope.getFilterData = function (arr, prop, val, key) {
         var filteredArray = [];
-        if ((val & key) > 0)
-        {
-            filteredArray=$scope.findUniqueValue(arr, prop);
+        if (angular.isDefined(arr)) {
+            if ((val & key) > 0) {
+                filteredArray = $scope.findUniqueValue(arr, prop);
+            }
         }
         return filteredArray;
     };
     $scope.getFilterKey = function (arr, val, key) {
-        if (((val & key) > 0) && arr.length >0) {
-            return key;
+        if (angular.isDefined(arr)) {
+            if (((val & key) > 0) && arr.length > 0) {
+                return key;
+            }
         }
         return 0;
     };
@@ -122,37 +124,45 @@
         $scope.filterCondition.Key = 0;
         $scope.filterCondition.SelectedGroup = $scope.getFilterData($scope.selectedGroup, "GroupID",
             $scope.basicFilterKey, 32);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedGroup,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedGroup,
             $scope.basicFilterKey, 32);
         $scope.filterCondition.SelectedBU = $scope.getFilterData($scope.selectedBU, "BUID",
             $scope.basicFilterKey, 64);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedBU,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedBU,
            $scope.basicFilterKey, 64);
         $scope.filterCondition.SelectedSBU = $scope.getFilterData($scope.selectedSBU, "SBUID",
             $scope.basicFilterKey, 128);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedSBU,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedSBU,
            $scope.basicFilterKey, 128);
         $scope.filterCondition.SelectedPractice = $scope.getFilterData($scope.selectedPractice, "PracticeID",
             $scope.basicFilterKey, 2);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedPractice,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedPractice,
            $scope.basicFilterKey, 2);
         $scope.filterCondition.SelectedVertical = $scope.getFilterData($scope.selectedVertical, "VerticalID",
             $scope.basicFilterKey, 1);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedVertical,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedVertical,
            $scope.basicFilterKey, 1);
         $scope.filterCondition.SelectedSubVertical = $scope.getFilterData($scope.selectedSubVertical, "SubVerticalID",
             $scope.basicFilterKey, 4);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedSubVertical,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedSubVertical,
            $scope.basicFilterKey, 4);
         $scope.filterCondition.SelectedParentAccount = $scope.getFilterData($scope.selectedParentAccount, "ParentAccountID",
             $scope.basicFilterKey, 8);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedParentAccount,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedParentAccount,
            $scope.basicFilterKey, 8);
         $scope.filterCondition.SelectedAccount = $scope.getFilterData($scope.selectedAccount, "AccountID",
             $scope.basicFilterKey, 16);
-        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.selectedAccount,
+        $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedAccount,
            $scope.basicFilterKey, 16);
-        console.log($scope.filterCondition.Key);
+        if ($scope.filterCondition.Key > 0) {
+            ToDoService.getFilterData($scope.filterCondition).success(function (data) {
+                if (data != null) {
+                    console.log(data);
+                }
+            }).error(function (data) {
+
+            });
+        }
     };
     $scope.setFilter = function (arr,val) {
         var filteredArray = $filter('filter')(arr, function (item) {

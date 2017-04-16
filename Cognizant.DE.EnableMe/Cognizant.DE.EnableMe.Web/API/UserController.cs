@@ -28,9 +28,16 @@ namespace Cognizant.DE.EnableMe.Web.API
             return Request.CreateResponse<IEnumerable<AppRole>>(HttpStatusCode.OK, userService.GetUserRoles(roleID));
         }
         [Route("basicfilter")]
+        [HttpGet]
         public HttpResponseMessage GetUserBasicFilter(int userID, int roleID)
         {
             return Request.CreateResponse<IEnumerable<BasicFilter>>(HttpStatusCode.OK, userService.GetUserBasicFilter(userID,roleID));
+        }
+        [Route("filterdata")]
+        [HttpPost]
+        public HttpResponseMessage LoadUserDataByFilter(FilterInput filterInput)
+        {
+            return Request.CreateResponse<string>(HttpStatusCode.OK, "test");
         }
     }
 }
