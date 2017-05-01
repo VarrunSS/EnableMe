@@ -54,15 +54,35 @@
                        { "name": "Vertical", "key": 1 },
                        { "name": "Horizontal", "key": 2 },
                        { "name": "Vertical + Horizontal", "key": 3 }];
-    $scope.selectedGroup = [];
-    $scope.selectedBU = [];
-    $scope.selectedSBU = [];
-    $scope.selectedPractice = [];
-    $scope.selectedVertical = [];
-    $scope.selectedSubVertical = [];
-    $scope.selectedParentAccount = [];
-    $scope.selectedAccount = [];
+    $rootScope.selectedGroup = [];
+    $rootScope.selectedBU = [];
+    $rootScope.selectedSBU = [];
+    $rootScope.selectedPractice = [];
+    $rootScope.selectedVertical = [];
+    $rootScope.selectedSubVertical = [];
+    $rootScope.selectedParentAccount = [];
+    $rootScope.selectedAccount = [];
     $scope.filterCondition = {};
+    $scope.$watch('selectedPractice', function () {
+        $scope.filterCondition.SelectedPractice = $scope.getFilterData($rootScope.selectedPractice, "PracticeID",
+            $scope.basicFilterKey, 2);
+    });
+    $scope.$watch('selectedVertical', function () {
+        $scope.filterCondition.SelectedVertical = $scope.getFilterData($rootScope.selectedVertical, "VerticalID",
+           $scope.basicFilterKey, 1);
+    });
+    $scope.$watch('selectedSubVertical', function () {
+        $scope.filterCondition.SelectedSubVertical = $scope.getFilterData($rootScope.selectedSubVertical, "SubVerticalID",
+            $scope.basicFilterKey, 4);        
+    });
+    $scope.$watch('selectedParentAccount', function () {
+        $scope.filterCondition.SelectedParentAccount = $scope.getFilterData($rootScope.selectedParentAccount, "ParentAccountID",
+            $scope.basicFilterKey, 8);        
+    });
+    $scope.$watch('selectedAccount', function () {
+        $scope.filterCondition.SelectedAccount = $scope.getFilterData($rootScope.selectedAccount, "AccountID",
+            $scope.basicFilterKey, 16);
+    });
     $scope.toogleUserSwitch = function () {
         $scope.showUserSwitch = !$scope.showUserSwitch;
     }
@@ -122,35 +142,35 @@
     };
     $scope.loadFilterData = function () {
         $scope.filterCondition.Key = 0;
-        $scope.filterCondition.SelectedGroup = $scope.getFilterData($scope.selectedGroup, "GroupID",
+        $scope.filterCondition.SelectedGroup = $scope.getFilterData($rootScope.selectedGroup, "GroupID",
             $scope.basicFilterKey, 32);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedGroup,
             $scope.basicFilterKey, 32);
-        $scope.filterCondition.SelectedBU = $scope.getFilterData($scope.selectedBU, "BUID",
+        $scope.filterCondition.SelectedBU = $scope.getFilterData($rootScope.selectedBU, "BUID",
             $scope.basicFilterKey, 64);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedBU,
            $scope.basicFilterKey, 64);
-        $scope.filterCondition.SelectedSBU = $scope.getFilterData($scope.selectedSBU, "SBUID",
+        $scope.filterCondition.SelectedSBU = $scope.getFilterData($rootScope.selectedSBU, "SBUID",
             $scope.basicFilterKey, 128);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedSBU,
            $scope.basicFilterKey, 128);
-        $scope.filterCondition.SelectedPractice = $scope.getFilterData($scope.selectedPractice, "PracticeID",
+        $scope.filterCondition.SelectedPractice = $scope.getFilterData($rootScope.selectedPractice, "PracticeID",
             $scope.basicFilterKey, 2);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedPractice,
            $scope.basicFilterKey, 2);
-        $scope.filterCondition.SelectedVertical = $scope.getFilterData($scope.selectedVertical, "VerticalID",
+        $scope.filterCondition.SelectedVertical = $scope.getFilterData($rootScope.selectedVertical, "VerticalID",
             $scope.basicFilterKey, 1);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedVertical,
            $scope.basicFilterKey, 1);
-        $scope.filterCondition.SelectedSubVertical = $scope.getFilterData($scope.selectedSubVertical, "SubVerticalID",
+        $scope.filterCondition.SelectedSubVertical = $scope.getFilterData($rootScope.selectedSubVertical, "SubVerticalID",
             $scope.basicFilterKey, 4);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedSubVertical,
            $scope.basicFilterKey, 4);
-        $scope.filterCondition.SelectedParentAccount = $scope.getFilterData($scope.selectedParentAccount, "ParentAccountID",
+        $scope.filterCondition.SelectedParentAccount = $scope.getFilterData($rootScope.selectedParentAccount, "ParentAccountID",
             $scope.basicFilterKey, 8);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedParentAccount,
            $scope.basicFilterKey, 8);
-        $scope.filterCondition.SelectedAccount = $scope.getFilterData($scope.selectedAccount, "AccountID",
+        $scope.filterCondition.SelectedAccount = $scope.getFilterData($rootScope.selectedAccount, "AccountID",
             $scope.basicFilterKey, 16);
         $scope.filterCondition.Key += $scope.getFilterKey($scope.filterCondition.SelectedAccount,
            $scope.basicFilterKey, 16);
@@ -194,5 +214,16 @@
         var pattern = /^\d+$/;
         return pattern.test(val);
     }
+    $scope.arr = ["57", "58"];
+    //Infinite Scroll Magic
+    $scope.infiniteScroll = {};
+    $scope.infiniteScroll.numToAdd = 20;
+    $scope.infiniteScroll.currentItems = 20;
 
+    $scope.resetInfScroll = function () {
+        $scope.infiniteScroll.currentItems = $scope.infiniteScroll.numToAdd;
+    };
+    $scope.addMoreItems = function () {
+        $scope.infiniteScroll.currentItems += $scope.infiniteScroll.numToAdd;
+    };
 }]);

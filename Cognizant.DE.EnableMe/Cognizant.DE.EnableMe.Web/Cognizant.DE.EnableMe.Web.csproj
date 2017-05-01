@@ -285,6 +285,7 @@
     <Content Include="includes\js\datetimepicker.js" />
     <Content Include="includes\js\datetimepicker.templates.js" />
     <Content Include="includes\js\fullcalendar.min.js" />
+    <Content Include="includes\js\infinite-scroll.js" />
     <Content Include="includes\js\jquery.bxslider.min.js" />
     <Content Include="includes\js\jQuery.js" />
     <Content Include="includes\js\jquery.mCustomScrollbar.js" />

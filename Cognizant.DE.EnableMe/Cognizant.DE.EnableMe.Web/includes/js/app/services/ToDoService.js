@@ -23,6 +23,8 @@ APP.app.factory("ToDoService", ["$http", "utility", "ToDoConfig", function ($htt
             });
         },
         getFilterData: function (data) {
+            console.log(JSON.stringify(data));
+            console.log(CryptoJS.MD5(JSON.stringify(data)).toString(CryptoJS.enc.Base64));
             return $http.post(utility.resolveUrl(ToDoConfig.filterData), JSON.stringify(data),
                     {
                         headers: {

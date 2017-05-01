@@ -72,7 +72,7 @@ if (!String.prototype.replaceAll) {
     };
 }
 
-APP.app = angular.module("ToDoApp", ["ngRoute", "nya.bootstrap.select", "ngMessages", "ngTouch", "angucomplete-alt", "ngScrollbars", "ngMaterial", "material.svgAssetsCache", "ngAnimate", "ui.bootstrap", "angularGrid",
+APP.app = angular.module("ToDoApp", ["ngRoute", "nya.bootstrap.select", "ngMessages", "ngTouch", "angucomplete-alt", "ngScrollbars", "ngMaterial", "material.svgAssetsCache", "ngAnimate", "ui.bootstrap", "angularGrid",'infinite-scroll',
 "ToDoApp.directives", "ToDoApp.controllers", "ToDoApp.services", "ToDoApp.filters"]);
 
 /*** Routing - Start ***/

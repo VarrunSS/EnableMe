@@ -32,4 +32,13 @@ filterModule.filter('startFrom', function () {
 
         return output;
     };
+}).filter('inArray', function ($filter) {
+    return function (list, arrayFilter, element) {
+        if (arrayFilter && arrayFilter.length>0) {
+            return $filter("filter")(list, function (listItem) {
+                return arrayFilter.indexOf(listItem[element]) != -1;
+            });
+        }
+        return list;
+    };
 });

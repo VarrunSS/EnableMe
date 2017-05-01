@@ -53,7 +53,7 @@
           <ul class="pull-left col-xs-9">
               <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(32,basicFilterKey)">
                   <div class=" selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select  " ng-model="$parent.selectedGroup" actions-box="true" data-size="5" multiple>
+                      <ol class="nya-bs-select  " ng-model="$root.selectedGroup" actions-box="true" data-size="5" multiple>
                           <li nya-bs-option="option in basicFilter | unique:'GroupID' | orderBy:'GroupName' ">
                               <a> {{option.GroupName}} </a>
                           </li>
@@ -62,7 +62,7 @@
               </li>
               <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(64,basicFilterKey)">
                   <div class=" selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select" ng-model="$parent.selectedBU" actions-box="true" data-size="5" multiple>
+                      <ol class="nya-bs-select" ng-model="$root.selectedBU" actions-box="true" data-size="5" multiple>
                           <li nya-bs-option="option in basicFilter | unique:'BUID' | orderBy:'BUName' ">
                               <a> {{option.BUName}} </a>
                           </li>
@@ -71,7 +71,7 @@
               </li>
               <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(128,basicFilterKey)">
                   <div class=" selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select" ng-model="$parent.selectedSBU" actions-box="true" data-size="5" multiple>
+                      <ol class="nya-bs-select" ng-model="$root.selectedSBU" actions-box="true" data-size="5" multiple>
                           <li nya-bs-option="option in basicFilter | unique:'SBUID' | orderBy:'SBUName' ">
                               <a> {{option.SBUName}} </a>
                           </li>
@@ -80,7 +80,7 @@
               </li>
               <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(2,basicFilterKey)">
                   <div class=" selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select dropbox" ng-model="$parent.selectedPractice" actions-box="true" data-size="5" multiple>
+                      <ol class="nya-bs-select dropbox" ng-model="$root.selectedPractice" actions-box="true" data-size="5" multiple>
                           <li nya-bs-option="option in basicFilter | unique:'PracticeID' | orderBy:'PracticeName' ">
                               <a> {{option.PracticeName}} </a>
                           </li>
@@ -89,8 +89,11 @@
               </li>
               <li class="pull-left breadcrumbList noPadding " ng-if="bitAND(1,basicFilterKey)">
                   <div class="selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedVertical" data-size="5" multiple>
-                          <li nya-bs-option="option in basicFilter | unique:'VerticalID' | orderBy:'VerticalName'">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$root.selectedVertical" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter
+                              | unique:'VerticalID'
+                              | orderBy:'VerticalName'
+                              | inArray: filterCondition.SelectedPractice : 'PracticeID'">
                               <a> {{option.VerticalName}} </a>
                           </li>
                       </ol>
@@ -106,8 +109,12 @@
             </li>-->
               <li class="pull-left breadcrumbList noPadding" ng-if="bitAND(4,basicFilterKey)">
                   <div class=" selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedSubVertical" data-size="5" multiple>
-                          <li nya-bs-option="option in basicFilter | unique:'SubVerticalID' | orderBy:'SubVerticalName'">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$root.selectedSubVertical" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter
+                              | unique:'SubVerticalID'
+                              | orderBy:'SubVerticalName'
+                              | inArray: filterCondition.SelectedPractice : 'PracticeID'
+                              | inArray: filterCondition.SelectedVertical : 'VerticalID'">
                               <a> {{option.SubVerticalName}} </a>
                           </li>
                       </ol>
@@ -115,8 +122,13 @@
               </li>
               <li class="pull-left breadcrumbList noPadding" ng-if="bitAND(8,basicFilterKey)">
                   <div class=" selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedParentAccount" data-size="5" multiple>
-                          <li nya-bs-option="option in basicFilter | unique:'ParentAccountID' | orderBy:'ParentAccountName'">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$root.selectedParentAccount" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter
+                              | unique:'ParentAccountID'
+                              | orderBy:'ParentAccountName'
+                              | inArray: filterCondition.SelectedPractice : 'PracticeID'
+                              | inArray: filterCondition.SelectedVertical : 'VerticalID'
+                              | inArray: filterCondition.SelectedSubVertical : 'SubVerticalID'">
                               <a> {{option.ParentAccountName}} </a>
                           </li>
                       </ol>
@@ -124,8 +136,14 @@
               </li>
               <li class="pull-left breadcrumbList noPadding last" ng-if="bitAND(16,basicFilterKey)">
                   <div class=" selectWrapper selectContainer pull-left">
-                      <ol class="nya-bs-select" actions-box="true" ng-model="$parent.selectedAccount" data-size="5" multiple live-search="true">
-                          <li nya-bs-option="option in basicFilter | unique:'AccountID' | orderBy:'AccountName'">
+                      <ol class="nya-bs-select" actions-box="true" ng-model="$root.selectedAccount" data-size="5" multiple>
+                          <li nya-bs-option="option in basicFilter
+                              | unique:'AccountID'
+                              | orderBy:'AccountName'
+                              | inArray: filterCondition.SelectedPractice : 'PracticeID'
+                              | inArray: filterCondition.SelectedVertical : 'VerticalID'
+                              | inArray: filterCondition.SelectedSubVertical : 'SubVerticalID'
+                              | inArray: filterCondition.SelectedParentAccount : 'ParentAccountID'">
                               <a> {{option.AccountName}} </a>
                           </li>
                       </ol>       

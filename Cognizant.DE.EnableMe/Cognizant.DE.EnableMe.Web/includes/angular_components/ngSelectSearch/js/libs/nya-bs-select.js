@@ -21,10 +21,12 @@ nyaBsSelect.directive('nyaBsSelect', ['$parse', '$document', '$timeout', '$compi
 
   var ACTIONS_BOX = '<div class="bs-actionsbox">' +
     '<div class="btn-group btn-group-sm btn-block">' +
+    //'<button class="actions-btn bs-apply btn btn-default">Apply</button>' +
     '<button class="actions-btn bs-select-all btn btn-default">SELECT ALL</button>' +
     '<button class="actions-btn bs-deselect-all btn btn-default">DESELECT ALL</button>' +
     '</div>' +
     '</div>';
+   
 
   return {
     restrict: 'ECA',

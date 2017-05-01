@@ -5,6 +5,6 @@ C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cogni
 C:\Users\Jagan\Documents\Visual Studio 2013\Projects\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Entities\obj\Debug\Cognizant.DE.EnableMe.Entities.pdb
 C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Entities\bin\Debug\Cognizant.DE.EnableMe.Entities.dll
 C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Entities\bin\Debug\Cognizant.DE.EnableMe.Entities.pdb
+C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Entities\obj\Debug\Cognizant.DE.EnableMe.Entities.csprojResolveAssemblyReference.cache
 C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Entities\obj\Debug\Cognizant.DE.EnableMe.Entities.dll
 C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Entities\obj\Debug\Cognizant.DE.EnableMe.Entities.pdb
-C:\Users\Jagan\Documents\GitHub\EnableMe\Cognizant.DE.EnableMe\Cognizant.DE.EnableMe.Entities\obj\Debug\Cognizant.DE.EnableMe.Entities.csprojResolveAssemblyReference.cache

@@ -63,8 +63,25 @@
     <script type="text/javascript" src="includes/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="includes/js/ui-bootstrap-tpls-2.4.0.min.js"></script>
     <script type="text/javascript" src="includes/js/angulargrid.js"></script>
+    <script type="text/javascript" src="includes/js/infinite-scroll.js"></script>
+    <script type="text/javascript" src="http://cryptojs.altervista.org/api/functions_cryptography.js"></script> 
     @*<script type="text/javascript" src="includes/js/app/app.js"></script>*@
     <script type="text/javascript" src="includes/js/script.js"></script>
+    <script type="text/javascript">
+
+
+        var Crypt = new Crypt();  // constructor
+
+        /*** encrypt */
+        var ciphertext = Crypt.AES.encrypt("plaintext", "Secret Passphrase");
+        // H3fAh9bppeg=xuHy8woEtOfYYI18tLM76A==BKUvKCztSNl8
+
+        /*** decrypt */
+        var plaintext  = Crypt.AES.decrypt(ciphertext, "Secret Passphrase");
+
+        var digest_md5 = Crypt.HASH.md5("message"); 
+
+    </script> 
     @Scripts.Render("~/bundles/js/app")
     @RenderSection("scripts", required: false)
 </body>
